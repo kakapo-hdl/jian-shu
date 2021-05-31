@@ -80,7 +80,7 @@ export const SearchInfo = style.div`
   width:240px;
   padding:0 20px;
   min-height:100px;
-  box-shadow: 0 0 8px rgba(0,0,0,.2);
+  box-shadow: 0 0 8px rgba(0,0,0,.2);  background:#fff
 `;
 export const SearchInfoTitle = style.div`
   margin-top:20px;
