@@ -19,7 +19,7 @@ export const HomeLeft = style.div`
 
 export const HomeRight = style.div`
   float:left; 
-   width:240px;
+  width:280px;
   margin-left:15px;
   padding-top:30px;
 `;
@@ -40,6 +40,7 @@ export const TopicItem =style.div`
   background:#f7f7f7;
   border:1px solid #dcdcdc;
   border-radius:4px;
+  border-bottom:1px solid #dcdcdc;
   .topic-image{
     display:block;
     float:left;
@@ -56,4 +57,47 @@ export const MoreTopic =style.div`
   margin-left:18px;
   cursor:pointer;
   color: #D4D4D4;
+`;
+export const ListItem = style.div`
+padding:20px 0;
+border-bottom:1px solid #dcdcdc;
+overflow:hidden;
+  .pic {
+    display:block;
+    width:125px;
+    height:100px;
+    float:right;
+    border-radius:10px;
+  }
+`;
+
+export const ListMessage = style.div`
+  width:500px;
+  float:left;
+  padding-right:15px;
+  box-sizing: border-box;
+  .title {
+    line-height:27px;
+    font-size:18px;
+    font-weight:bold;
+    color:#333;
+  }
+  .content {
+    line-height:18px;
+    font-size:13px;
+  }
+`;
+
+export const RecommendWrapper = style.div`
+  width:280px;
+`;
+export const RecommendItem = style.a`
+  display:block;
+  width:100%;
+  min-height: 50px;
+  margin-bottom:6px;
+  cursor:pointer;
+  border-radius:4px;
+  background:url(${(props)=>props.imgUrl});
+  background-size:contain;
 `;

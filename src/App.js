@@ -4,9 +4,7 @@ import store from './store'
 import {Provider} from 'react-redux'
 import {
   BrowserRouter,
-  Switch,
   Route,
-  Link
 } from "react-router-dom";
 import Home from './pages/home';
 import Detail from './pages/detail'
