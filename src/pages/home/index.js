@@ -3,11 +3,13 @@ import Topic from './component/Topic'
 import List from './component/List'
 import Recommend from './component/Recommend'
 import Writer from './component/Writer'
+import QrCode from './component/QrCode'
 import {
   HomeWrapper,
   HomeLeft,
   HomeRight,
 } from './style'
+
 class Home extends Component{
   render(){
     return(
@@ -20,7 +22,9 @@ class Home extends Component{
           <List></List>
         </HomeLeft> 
         <HomeRight>
+
           <Recommend></Recommend>
+          <QrCode></QrCode>
           <Writer></Writer>
         </HomeRight> 
       </HomeWrapper>

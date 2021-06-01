@@ -20,7 +20,7 @@ export const HomeLeft = style.div`
 export const HomeRight = style.div`
   float:left; 
   width:280px;
-  margin-left:15px;
+  margin-left:40px;
   padding-top:30px;
 `;
 export const TopicWrapper =style.div`
@@ -81,6 +81,10 @@ export const ListMessage = style.div`
     font-size:18px;
     font-weight:bold;
     color:#333;
+    cursor:pointer;
+    :hover{
+      text-decoration:underline;
+    }
   }
   .content {
     line-height:18px;
@@ -100,4 +104,51 @@ export const RecommendItem = style.a`
   border-radius:4px;
   background:url(${(props)=>props.imgUrl});
   background-size:contain;
+`;
+
+export const QrCodeWrapper = style.div`
+  box-sizing: border-box;
+  overflow:hidden;
+  width:100%;
+  padding:10px 22px;
+  border:1px solid #f0f0f0;
+  background-color:#fff;
+  border-radius:4px;
+  margin-bottom:30px;
+  cursor: pointer;
+  .text-info{
+    float:left;
+    margin: auto 0;
+    margin-left:8px;
+    .text-title{
+      margin-top:14px;
+      font-size:15px;
+      color:#333;
+    }
+    .text-content{
+      margin-top: 4px;
+      font-size: 13px;
+      color: #999;
+    }
+  }
+  > img{
+    float:left;
+    width:60px;
+    height:60px;
+    opacyty:.85;
+  }
+`;
+export const WriterWrapper = style.div`
+  width:100%;
+  min-height:200px;
+  border:solid 1px;
+`;
+export const WriterHeader = style.div`
+  display:flex;
+  justify-content:space-between;
+  font-size: 14px;
+  color: #969696;
+  .iconfont{
+    font-size:11px
+  }
 `;
