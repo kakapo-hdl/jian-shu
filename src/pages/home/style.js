@@ -141,7 +141,6 @@ export const QrCodeWrapper = style.div`
 export const WriterWrapper = style.div`
   width:100%;
   min-height:200px;
-  border:solid 1px;
 `;
 export const WriterHeader = style.div`
   display:flex;
@@ -151,4 +150,61 @@ export const WriterHeader = style.div`
   .iconfont{
     font-size:11px
   }
+  .writer-change{
+    cursor:pointer;
+    :hover{
+      color: #787878;
+    }
+  }
 `;
+export const WriterItem = style.div`
+  margin-top:15px;
+  height:48px;
+  width:100%;
+  .writer-desc{
+    margin-top: 12px;
+  font-size: 12px;
+  color: #969696;
+  }
+`;
+export const ItemImg = style.a`
+  width:48px;
+  height:48px;
+  margin-right:10px;
+  display:block;
+  float:left;
+  border-radius:24px;
+  background:url(${(props)=>props.imgUrl});
+  background-size:contain;
+  `
+  export const WiterName = style.div`
+    display:flex;
+    padding-top:5px;
+    justify-content:space-between;
+    font-size:14px;
+    color:#333;
+    > span{
+      cursor:pointer;
+    }
+    .add-care{
+      font-size: 13px;
+      color: #42c02e;
+    }
+  `;
+  export const ShowMore = style.a`
+    display:block;
+    cursor:pointer;
+    box-sizing: border-box;
+    width:100%;
+    height:35px;
+    padding:9px 7px 7px 12px;
+    border: 1px solid #dcdcdc;
+    background:#f7f7f7; 
+    text-align:center;
+    margin-top:15px;
+    border-radius:4px;
+    font-size:13px;
+    vertical-align:center;
+    color:#787878;
+  `;
+  

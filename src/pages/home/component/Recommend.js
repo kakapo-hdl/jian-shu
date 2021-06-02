@@ -6,7 +6,9 @@ class Recommend extends Component{
     const {List} = this.props
     return(
       <RecommendWrapper>
-        {List.map(item=>{
+        {
+      
+        List.map(item=>{
           return(
             <RecommendItem key={item.get('id')} imgUrl={item.get('imgUrl')}/>
           )
