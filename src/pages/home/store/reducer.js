@@ -1,5 +1,5 @@
 import {fromJS} from 'immutable'
-
+import {constants} from './index'
 const defaultState = fromJS({
   topicList:[
     {
@@ -39,26 +39,20 @@ const defaultState = fromJS({
       imgUrl:'https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3228549874,2173006364&fm=26&gp=0.jpg'
     }
   ],
-  recommendList:[{
-    id:1,
-    imgUrl:'https://cdn2.jianshu.io/assets/web/banner-s-daily-e6f6601abc495573ad37f2532468186f.png'
-  },
-  {
-    id:2,
-    imgUrl:'https://cdn2.jianshu.io/assets/web/banner-s-club-aa8bdf19f8cf729a759da42e4a96f366.png'
-  },
-  {
-    id:3,
-    imgUrl:'https://cdn2.jianshu.io/assets/web/banner-s-7-1a0222c91694a1f38e610be4bf9669be.png'
-  },
-  {
-    id:4,
-    imgUrl:'https://cdn2.jianshu.io/assets/web/banner-s-5-4ba25cf5041931a0ed2062828b4064cb.png'
-  }
-  ]
+  articlePage:1,
+  recommendList:[],
+  showScroll:false
 })
  const reducer=(state = defaultState, action)=>{
   switch(action.type){
+    case constants.ADD_HOME_LIST:
+       return state.merge({
+        "articleList":state.get('articleList').concat(action.list),
+        "articlePage":action.page
+       })
+       case constants.TOGGLE_SCROLL_TOP:
+        return state.set('showScroll',action.show)
+      //  state.set("articleList",
     default:break;
   }
   return state;

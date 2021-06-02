@@ -1,6 +1,7 @@
 import style from 'styled-components'
 
 export const HomeWrapper = style.div`
+   padding-top: 56px;
   width:960px;
   margin:0 auto;
   overflow:hiddenl
@@ -23,10 +24,26 @@ export const HomeRight = style.div`
   margin-left:40px;
   padding-top:30px;
 `;
+
+export const BackTop = style.div`
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 1040;
+  border: 1px solid #dcdcdc;
+  background-color: #fff;
+  transition: all 1s ease-in;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  line-height:50px;
+  text-align: center;
+`;
 export const TopicWrapper =style.div`
   padding: 20px 0 10px 0;
   margin-left:-18px;
   overflow:hidden;
+
 `;
 export const TopicItem =style.div`
   float: left;
@@ -90,6 +107,19 @@ export const ListMessage = style.div`
     line-height:18px;
     font-size:13px;
   }
+`;
+export const LoadMore = style.a`
+  display:block;
+  cursor:pointer;
+  width:100%;
+  height:40px;
+  line-height:40px;
+  margin:30px 0;
+  background:#a5a5a5;
+  text-align:center;
+  border-radius:20px;
+  color:#fff;
+  font-size:15px;
 `;
 
 export const RecommendWrapper = style.div`
