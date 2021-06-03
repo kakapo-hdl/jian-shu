@@ -9,30 +9,43 @@ import {
   HomeWrapper,
   HomeLeft,
   HomeRight,
+  BackTop
 } from './style'
 import axios from 'axios'
+import { actionCreator } from './store'
 
 class Home extends Component{
+  handleScrollTop(){
+    window.scrollTo(0,0);
+  }
   render(){
+    const {showScroll} = this.props
     return(
       <HomeWrapper>
         <HomeLeft>
           <img alt={'...'} className={'banner-image'} src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTjTD60zWocj-WIryJgZfDxQ6_K3AUDq0n2A&usqp=CAU'}></img>
           <Topic>
-
           </Topic>
           <List></List>
         </HomeLeft> 
         <HomeRight>
-
           <Recommend></Recommend>
           <QrCode></QrCode>
           <Writer></Writer>
         </HomeRight> 
+        { showScroll ? (          
+        <BackTop onClick = {this.handleScrollTop}>顶部</BackTop>)
+         :null
+        }
       </HomeWrapper>
     )
+  }  
+  bindEvents(){
+    window.addEventListener('scroll',this.props.changeScrollTopShow)
   }
+
   componentDidMount(){
+    this.bindEvents();
     axios.get('/api/home.json').then(res=>{
       const result = res.data.data;
       console.log(result);
@@ -47,9 +60,19 @@ class Home extends Component{
     })
   }
 }
-const mapDispatch = (dispatch) =>({
+const mapDispatch=(dispatch)=>({
   changeHomeData(action){
     dispatch(action)
+  },
+  changeScrollTopShow(){
+    if(document.documentElement.scrollTop > 450){
+      dispatch(actionCreator.toggleTopShow(true))
+    }else{
+      dispatch(actionCreator.toggleTopShow(false))
+    }
   }
 })
-export default connect(null,mapDispatch)(Home);
+const mapState = (state) => ({
+  showScroll: state.getIn(['home','showScroll'])
+})
+export default connect(mapState,mapDispatch)(Home);

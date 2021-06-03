@@ -1,9 +1,13 @@
 import style from 'styled-components'
 import logoPic from '../../statics/header-logo.png'
 export const HeaderWrapper = style.div`
-  position:relative;
+position: fixed;
+right: 0;
+left: 0;
+  // position:relative;
   height:56px;
   border-bottom:1px solid #f0f0f0;
+  background:#fff;
 `;
 
 export const Logo = style.a`
