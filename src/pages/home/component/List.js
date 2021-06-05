@@ -18,7 +18,7 @@ class List extends Component {
    
         <ListItem>
           <ListMessage>
-          <Link  key={index} to="/detail"> <h3 className="title">{item.get('title')}</h3> </Link>
+          <Link  key={index} to={`/detail/${item.get('id')}`}> <h3 className="title">{item.get('title')}</h3> </Link>
               <p className="content">{item.get('content')}</p>
             </ListMessage>
             <img alt='' className="pic" src={item.get('imgUrl')}></img>
