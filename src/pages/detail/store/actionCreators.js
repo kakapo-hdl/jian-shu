@@ -1,4 +1,5 @@
 import * as constants from './constants'
+<<<<<<< HEAD
 import {fromJS} from 'immutable'
 import axios from 'axios'
 
@@ -17,3 +18,25 @@ export const getDetailData = ()=>{
     )
   }
 }
+=======
+// import {fromJS} from 'immutable'
+import axios from 'axios'
+
+const actionDetail=(title,content)=>({
+  type:constants.GET_DETAIL,
+  title:title,
+  content:content
+})
+export const getDetail = (id) => {
+  return (dispatch) => { 
+    axios.get(`/api/detail.json?id=${id}`).then(
+    (res)=>{
+      const result = res.data.data;
+      dispatch(actionDetail(result.title,result.content))
+    }
+  ).catch(
+    err=>console.log(err)
+  )
+  }
+};
+>>>>>>> 455fdd4c3131c05ef76d4c63bbfadb43a85a196e

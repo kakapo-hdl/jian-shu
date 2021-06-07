@@ -2,6 +2,8 @@ import React, {Component}from 'react'
 import { CSSTransition } from 'react-transition-group';
 import {connect} from 'react-redux';
 import { actionCreators } from './store';
+import { actionCreator as loginActionCreators } from '../../pages/login/store';
+
 import {Link} from 'react-router-dom'
 import {
   HeaderWrapper,
@@ -48,7 +50,7 @@ class Header extends Component {
     return null;
   }
   render(){
-    const {focused,handleBlur,handleFocus,list} = this.props;
+    const {focused,logout,handleBlur,handleFocus,list,login} = this.props;
     return (
       <HeaderWrapper>
         <Link to="/">
@@ -56,9 +58,18 @@ class Header extends Component {
         </Link>
  
         <Nav>
+        <Link to="/">
           <NavItem className={'left active'}>首页</NavItem>
+          </Link>
           <NavItem className={'left'}>下载App</NavItem>
-          <NavItem className={'right'}>登陆</NavItem>
+          {
+            login ? 
+            <NavItem onClick={()=>logout()} className={'right'}>退出</NavItem>:
+            <Link to="/login">
+            <NavItem className={'right'}>登陆</NavItem>
+            </Link>
+          }
+
           <NavItem className={'right'}>
             <i className={"iconfont"}>&#xe636;</i>
           </NavItem>  
@@ -93,7 +104,8 @@ const mapStateToprops=(state)=>{
      totalPage:state.get('header').get('totalPage'),
      list: state.get('header').get('list'),
      page: state.get('header').get('page'),
-     mouseIn: state.get('header').get('mouseIn')
+     mouseIn: state.get('header').get('mouseIn'),
+     login: state.get('login').get('login')
     }
   }
   const mapDispthToprops=(dispatch)=>{
@@ -120,6 +132,9 @@ const mapStateToprops=(state)=>{
         }else{
           dispatch(actionCreators.changePage(1))
         }
+      },
+      logout(){
+        dispatch(loginActionCreators.logout())
       }
     }
   }
