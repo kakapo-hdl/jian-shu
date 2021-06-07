@@ -8,6 +8,8 @@ import {
   Content
 } from './style';
 import {connect} from 'react-redux'
+import { actionCreator } from './store';
+import { getDetailData } from './store/actionCreators';
 class Detail extends Component{
   render(){
     // console.log(this.props);
@@ -30,9 +32,20 @@ class Detail extends Component{
       </DetailBody>
     )
   }
+  componentDidMount(){
+    this.props.getDetail();
+  }
 }
+const mapProps = (dispatch) => {
+  return {
+    getDetail(){
+      dispatch(actionCreator.getDetailData())
+    }
+  }
+}
+
 const mapState = (state)=>({
   title:state.getIn(['detail','title']),
   content:state.getIn(['detail','content'])
 })
-export default connect(mapState,null)(Detail) ;
+export default connect(mapState,mapProps)(Detail) ;
