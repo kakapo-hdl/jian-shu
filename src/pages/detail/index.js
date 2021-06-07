@@ -32,7 +32,7 @@ class Detail extends Component{
     )
   }
   componentDidMount(){
-    this.props.getDetail();
+    this.props.getDetail(this.props.match.params.id);
   }
 }
 
@@ -42,8 +42,8 @@ const mapState = (state)=>({
   content:state.getIn(['detail','content'])
 })
 const mapDispatch = (dispatch)=>({
-    getDetail(){
-      dispatch(actionCreator.getDetail())
+    getDetail(id){
+      dispatch(actionCreator.getDetail(id))
     }   
 })
 export default connect(mapState,mapDispatch)(Detail) ;
