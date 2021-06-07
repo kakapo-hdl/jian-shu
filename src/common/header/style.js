@@ -1,10 +1,13 @@
 import style from 'styled-components'
 import logoPic from '../../statics/header-logo.png'
 export const HeaderWrapper = style.div`
-// position: fixed;
+position: fixed;
 // right: 0;
 // left: 0;
-  // position:relative;
+min-width: 768px;
+max-width: 1440px;
+margin: 0 auto;
+  position:relative;
   height:56px;
   border-bottom:1px solid #f0f0f0;
   background:#fff;
@@ -12,9 +15,10 @@ export const HeaderWrapper = style.div`
 
 export const Logo = style.a`
   display:block;
-  position:absolute;
-  top:0;
-  left:0;
+  // position:absolute;
+  // top:0;
+  // left:0;
+  float:left;
   width:100px;
   height:56px;
   background:url(${logoPic});
@@ -24,7 +28,10 @@ export const Logo = style.a`
 export const Nav = style.div`
   width:960px;
   height:100%;
-  padding-right:70px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
   box-sizing:border-box;
   margin:0 auto;
 `;
@@ -36,6 +43,9 @@ export const NavItem = style.div`
   color:#333;
   &.left {
     float:left;
+    :hover{
+      background-color: #f5f5f5;
+    }
   }
   &.right {
     float:right;
@@ -124,9 +134,8 @@ export const SearchInfoList= style.div`
   overflow:hidden;
 `;
 export const Addition = style.div`
-  position:absolute;
-  right:0;
-  top:0;
+  float:right;
+
   height:56px;
 `;
 export const Button = style.button`

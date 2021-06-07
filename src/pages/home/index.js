@@ -23,7 +23,7 @@ class Home extends Component{
     return(
       <HomeWrapper>
         <HomeLeft>
-          <img alt={'...'} className={'banner-image'} src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTjTD60zWocj-WIryJgZfDxQ6_K3AUDq0n2A&usqp=CAU'}></img>
+          <img alt={'...'} className={'banner-image'} src={'https://img.iplaysoft.com/wp-content/uploads/2019/free-images/free_stock_photo.jpg'}></img>
           <Topic>
           </Topic>
           <List></List>

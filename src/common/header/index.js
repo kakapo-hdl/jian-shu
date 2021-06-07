@@ -56,7 +56,14 @@ class Header extends Component {
         <Link to="/">
           <Logo></Logo> 
         </Link>
- 
+
+               
+        <Addition>
+          <Button className={'red'}>注册</Button>
+          <Button className={'writting'}>
+            <i className={"iconfont"}>&#xe615;</i>
+            写文章</Button>
+        </Addition>
         <Nav>
         <Link to="/">
           <NavItem className={'left active'}>首页</NavItem>
@@ -88,12 +95,7 @@ class Header extends Component {
             {this.getListArea()}
             </SearchWrapper>
         </Nav>
-        <Addition>
-          <Button className={'red'}>注册</Button>
-          <Button className={'writting'}>
-            <i className={"iconfont"}>&#xe615;</i>
-            写文章</Button>
-        </Addition>
+ 
       </HeaderWrapper>
     )
   }
