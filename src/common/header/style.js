@@ -1,15 +1,11 @@
 import style from 'styled-components'
 import logoPic from '../../statics/header-logo.png'
 export const HeaderWrapper = style.div`
-position: fixed;
-// right: 0;
-// left: 0;
 min-width: 768px;
 max-width: 1440px;
 margin: 0 auto;
   position:relative;
   height:56px;
-  border-bottom:1px solid #f0f0f0;
   background:#fff;
 `;
 
@@ -152,10 +148,12 @@ export const Button = style.button`
   &.red{
     color:#ec6149;
     background:#fff;
+    cursor:pointer
   }
   &.writting{
     color:#fff;
     background:#ec6149;
+    cursor:pointer
   }
 `;
 export const SearchWrapper = style.div`

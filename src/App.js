@@ -7,7 +7,7 @@ import {
   Route,
 } from "react-router-dom";
 import Home from './pages/home';
-import Detail from './pages/detail'
+import Detail from './pages/detail/loadable.js'
 import Login from './pages/login'
 
 class App extends Component{  

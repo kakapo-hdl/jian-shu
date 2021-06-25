@@ -48,7 +48,6 @@ class Home extends Component{
     this.bindEvents();
     axios.get('/api/home.json').then(res=>{
       const result = res.data.data;
-      console.log(result);
       const action={
         type:'change_home_data',
         topicList:result.topicList,

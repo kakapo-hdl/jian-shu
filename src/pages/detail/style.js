@@ -2,6 +2,7 @@ import style from 'styled-components'
 
 export const DetailBody = style.div`
   background-color: #f9f9f9;
+  padding-top:56px;
   .detail-wrapper {
     display: flex;
     justify-content: center;

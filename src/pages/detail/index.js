@@ -9,6 +9,7 @@ import {
 } from './style';
 import {connect} from 'react-redux'
 import { actionCreator } from '../detail/store';
+import {withRouter} from 'react-router-dom';
 class Detail extends Component{
   render(){
     // console.log(this.props);
@@ -46,4 +47,4 @@ const mapDispatch = (dispatch)=>({
       dispatch(actionCreator.getDetail(id))
     }   
 })
-export default connect(mapState,mapDispatch)(Detail) ;
+export default connect(mapState,mapDispatch)(withRouter(Detail)) ;

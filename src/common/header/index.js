@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import { actionCreators } from './store';
 import { actionCreator as loginActionCreators } from '../../pages/login/store';
 
-import {Link} from 'react-router-dom'
+import {Link,withRouter } from 'react-router-dom'
 import {
   HeaderWrapper,
   Logo,
@@ -20,8 +20,15 @@ import {
   Button,
   SearchWrapper
 } from './style';
+
+
+// function HeaderView() {
+//   const location = useLocation();
+//   console.log(location.pathname);
+//   return <span>Path : {location.pathname}</span>
+// }
 class Header extends Component {
-   getListArea(){
+   getListArea(){      
     const {focused,mouseIn,list,page,totalPage,handleMouseEnter,handleMouseLeave,handleChangePage} = this.props;
     const pageList = [];
     const newList = list.toJS();
@@ -51,7 +58,9 @@ class Header extends Component {
   }
   render(){
     const {focused,logout,handleBlur,handleFocus,list,login} = this.props;
+    console.log('header',this.props.location);
     return (
+      <div style={{position:'fixed',width:'100%',borderBottom:'1px solid #f0f0f0',height:56}}>
       <HeaderWrapper>
         <Link to="/">
           <Logo></Logo> 
@@ -96,7 +105,7 @@ class Header extends Component {
             </SearchWrapper>
         </Nav>
  
-      </HeaderWrapper>
+      </HeaderWrapper></div>
     )
   }
 }
